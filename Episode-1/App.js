@@ -27,5 +27,35 @@ const title = (
     </div>
 
 )
+
+// Header Component
+const Header = ()=>{
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src="https://imgs.search.brave.com/ewzI2BNExKkTNC5LMvnU6o4TvGxF_gGqb_tJGUnd4A0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNzMv/NTgyLzk3Ni9zbWFs/bC9mbGF0LWlsbHVz/dHJhdGlvbi1vZi1h/LWJ1cmdlci1mcmll/cy1hbmQtZHJpbmst/ZmFzdC1mb29kLW1l/YWwtaW4tYS1tb2Rl/cm4tc3R5bGUtcG5n/LnBuZw"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+const AppLayout = () =>{
+    return (
+        <div className="app">
+            {/* Header */}
+            <Header/>
+            {/* Body */}
+
+            {/* Footer */}
+        </div>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(title);
+root.render(<AppLayout/>);
