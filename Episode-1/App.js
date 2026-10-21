@@ -3,108 +3,108 @@ import ReactDOM from "react-dom/client";
 
 const restaurants = [
     {
-        "info": {
-            "id": "66723",
-            "name": "Pandit Ji De Paranthe",
-            "cloudinaryImageId": "fsi1rq7eoctefyxzgoam",
-            "locality": "Gurdev Nagar",
-            "areaName": "Gurdev Nagar",
-            "costForTwo": "₹200 for two",
-            "cuisines": [
-                "Chinese",
-                "Beverages",
-                "Fast Food",
-                "Desserts"
-            ],
-            "avgRating": 4.3,
-            "veg": true,
-            "parentId": "154450",
-            "avgRatingString": "4.3",
-            "totalRatingsString": "6.5K+",
-            "sla": {
-                "deliveryTime": 27,
-                "lastMileTravel": 3,
-                "serviceability": "SERVICEABLE",
-                "slaString": "20-25 mins",
-                "lastMileTravelString": "3.0 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2026-10-22 04:00:00",
-                "opened": true
-            },
-            "badges": {
-                "imageBadges": [
-                    {
-                        "imageId": "v1695133679/badges/Pure_Veg111.png",
-                        "description": "Serves only 100% vegetarian food, with no non-veg items."
-                    }
-                ]
-            },
-            "isOpen": true,
-            "aggregatedDiscountInfoV2": {
-
-            },
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "imageBased": {
-                        "badgeObject": [
-                            {
-                                "attributes": {
-                                    "description": "Serves only 100% vegetarian food, with no non-veg items.",
-                                    "imageId": "v1695133679/badges/Pure_Veg111.png",
-                                    "theme": ""
-                                }
-                            }
-                        ]
-                    },
-                    "textBased": {
-
-                    },
-                    "textExtendedBadges": {
-
-                    }
-                }
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "lottie": {
-
-                    },
-                    "video": {
-
-                    }
-                }
-            },
-            "reviewsSummary": {
-
-            },
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {
-
-            },
-            "externalRatings": {
-                "aggregatedRating": {
-                    "rating": "4.0",
-                    "ratingCount": "2.9K+"
+            "info": {
+                "id": "66723",
+                "name": "Pandit Ji De Paranthe",
+                "cloudinaryImageId": "fsi1rq7eoctefyxzgoam",
+                "locality": "Gurdev Nagar",
+                "areaName": "Gurdev Nagar",
+                "costForTwo": "₹200 for two",
+                "cuisines": [
+                    "Chinese",
+                    "Beverages",
+                    "Fast Food",
+                    "Desserts"
+                ],
+                "avgRating": 4.3,
+                "veg": true,
+                "parentId": "154450",
+                "avgRatingString": "4.3",
+                "totalRatingsString": "6.5K+",
+                "sla": {
+                    "deliveryTime": 27,
+                    "lastMileTravel": 3,
+                    "serviceability": "SERVICEABLE",
+                    "slaString": "20-25 mins",
+                    "lastMileTravelString": "3.0 km",
+                    "iconType": "ICON_TYPE_EMPTY"
                 },
-                "source": "GOOGLE",
-                "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
-            },
-            "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
-            "priceComparisonComms": {
+                "availability": {
+                    "nextCloseTime": "2026-10-22 04:00:00",
+                    "opened": true
+                },
+                "badges": {
+                    "imageBadges": [
+                        {
+                            "imageId": "v1695133679/badges/Pure_Veg111.png",
+                            "description": "Serves only 100% vegetarian food, with no non-veg items."
+                        }
+                    ]
+                },
+                "isOpen": true,
+                "aggregatedDiscountInfoV2": {
 
+                },
+                "type": "F",
+                "badgesV2": {
+                    "entityBadges": {
+                        "imageBased": {
+                            "badgeObject": [
+                                {
+                                    "attributes": {
+                                        "description": "Serves only 100% vegetarian food, with no non-veg items.",
+                                        "imageId": "v1695133679/badges/Pure_Veg111.png",
+                                        "theme": ""
+                                    }
+                                }
+                            ]
+                        },
+                        "textBased": {
+
+                        },
+                        "textExtendedBadges": {
+
+                        }
+                    }
+                },
+                "differentiatedUi": {
+                    "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                    "differentiatedUiMediaDetails": {
+                        "lottie": {
+
+                        },
+                        "video": {
+
+                        }
+                    }
+                },
+                "reviewsSummary": {
+
+                },
+                "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                "restaurantOfferPresentationInfo": {
+
+                },
+                "externalRatings": {
+                    "aggregatedRating": {
+                        "rating": "4.0",
+                        "ratingCount": "2.9K+"
+                    },
+                    "source": "GOOGLE",
+                    "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
+                },
+                "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+                "priceComparisonComms": {
+
+                }
+            },
+            "analytics": {
+                "context": "seo-data-8fabd80a-0e77-4cee-b9f1-2e7198b077c5"
+            },
+            "cta": {
+                "link": "https://www.swiggy.com/city/ludhiana/pandit-ji-de-paranthe-gurdev-nagar-rest66723",
+                "type": "WEBLINK"
             }
-        },
-        "analytics": {
-            "context": "seo-data-8fabd80a-0e77-4cee-b9f1-2e7198b077c5"
-        },
-        "cta": {
-            "link": "https://www.swiggy.com/city/ludhiana/pandit-ji-de-paranthe-gurdev-nagar-rest66723",
-            "type": "WEBLINK"
-        }
     },
     {
         "info": {
@@ -2139,20 +2139,29 @@ const Header = () => {
 }
 // Restraunt Container
 const RestaurantCard = ({restObj}) => {
-    console.log(restObj)
+    // console.log(restObj)
+    const {
+        cloudinaryImageId,
+        name,
+        avgRating,
+        cuisines,
+        locality,
+        costForTwo,
+        sla: { slaString }
+    } = restObj.info;
     return (
         <div className="res-card">
-            <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/h8cn0ae8cdykxczx5ffb" alt="Mrs & Mr Kitchen" />
+            <img className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt={name} />
             <div className="res-card-details">
-                <h3>{restObj[0].info.name}</h3>
+                <h3>{name}</h3>
 
                 <div className="res-rating">
-                    <span>★</span> {restObj[0].info.avgRating} · {restObj[0].info.sla.slaString}
+                    <span>★</span> {avgRating} · {slaString}
                 </div>
 
-                <p>{restObj[0].info.cuisines.join(",")}</p>
-                <p>{restObj[0].info.locality}</p>
-                {/* <p>{props.costForTwo}</p> */}
+                <p>{cuisines.join(",")}</p>
+                <p>{locality}</p>
+                <p>{costForTwo}</p>
             </div>
         </div>
     )
@@ -2162,88 +2171,9 @@ const Body = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCard restObj={restaurants}/>
-
-                {/* // <RestaurantCard
-                //     name="Mrs & Mr Kitchen"
-                //     image="https://example.com/mrs-mr-kitchen.jpg"
-                //     rating="4.2"
-                //     deliveryTime="25–30 mins"
-                //     cuisines="North Indian, Chinese, Thalis"
-                //     location="Civil Lines"
-                //     costForTwo="₹300 for two"
-                // /> */}
-
-                {/* // <RestaurantCard
-                //     name="Bansi Pure Vegetarian"
-                //     image="https://example.com/bansi.jpg"
-                //     rating="4.0"
-                //     deliveryTime="35–40 mins"
-                //     cuisines="North Indian, Chinese, Thalis"
-                //     location="Dugri"
-                //     costForTwo="₹250 for two"
-                // />
-
-                // <RestaurantCard
-                //     name="Natural 2"
-                //     image="https://example.com/natural-2.jpg"
-                //     rating="4.4"
-                //     deliveryTime="15–20 mins"
-                //     cuisines="Chinese, Pizzas, Chaat, Beverages"
-                //     location="Civil Lines"
-                //     costForTwo="₹200 for two"
-                // />
-
-                // <RestaurantCard
-                //     name="Vipan Vaishno Dhaba"
-                //     image="https://example.com/vipan-dhaba.jpg"
-                //     rating="4.2"
-                //     deliveryTime="20–25 mins"
-                //     cuisines="Thalis, Chinese, Beverages"
-                //     location="Chaura Bazar"
-                //     costForTwo="₹250 for two"
-                // />
-
-                // <RestaurantCard
-                //     name="The Food Engineer"
-                //     image="https://example.com/food-engineer.jpg"
-                //     rating="3.6"
-                //     deliveryTime="20–25 mins"
-                //     cuisines="Chinese, Italian, Fast Food"
-                //     location="Chaura Bazar"
-                //     costForTwo="₹350 for two"
-                // />
-
-                // <RestaurantCard
-                //     name="Natural Soups & Shakes"
-                //     image="https://example.com/natural-shakes.jpg"
-                //     rating="4.5"
-                //     deliveryTime="20–25 mins"
-                //     cuisines="Chinese, South Indian, Pizzas"
-                //     location="Civil Lines"
-                //     costForTwo="₹200 for two"
-                // />
-
-                // <RestaurantCard
-                //     name="The Table by Basant"
-                //     image="https://example.com/table-basant.jpg"
-                //     rating="4.5"
-                //     deliveryTime="25–30 mins"
-                //     cuisines="Pizzas, Burgers, Desserts, Chinese"
-                //     location="Feroz Gandhi Market"
-                //     costForTwo="₹500 for two"
-                // />
-
-                // <RestaurantCard
-                //     name="College Road Samose Wala"
-                //     image="https://example.com/samose-wala.jpg"
-                //     rating="4.7"
-                //     deliveryTime="10–15 mins"
-                //     cuisines="Street Food, Indian, Snacks"
-                //     location="Civil Lines"
-                //     costForTwo="₹150 for two"
-                // /> */}
-
+                {
+                    restaurants.map(restaurant => <RestaurantCard key={restaurant.info.id} restObj={restaurant}/>)
+                }
             </div>
         </div>
     )
