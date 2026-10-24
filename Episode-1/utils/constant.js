@@ -1,0 +1,3 @@
+export const RES_IMG = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+export const LOGO = "https://imgs.search.brave.com/ewzI2BNExKkTNC5LMvnU6o4TvGxF_gGqb_tJGUnd4A0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNzMv/NTgyLzk3Ni9zbWFs/bC9mbGF0LWlsbHVz/dHJhdGlvbi1vZi1h/LWJ1cmdlci1mcmll/cy1hbmQtZHJpbmst/ZmFzdC1mb29kLW1l/YWwtaW4tYS1tb2Rl/cm4tc3R5bGUtcG5n/LnBuZw";

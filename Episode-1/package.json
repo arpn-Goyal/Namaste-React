@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "Arpan Goyal",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "parcel": "^2.16.4"
   },
