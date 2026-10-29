@@ -1,25 +1,112 @@
 .header{
     display: flex;
-    border: 1px solid black;
+    align-items: center;
+    /* border: 1px solid black; */
     justify-content: space-between;
-    padding: 0 30px 
+    padding: 12px 35px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 .logo{
     width: 133px;
 }
-
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 .nav-items > ul{
     display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+  padding: 0;
+  list-style: none;
     /* border: 1px solid black; */
 }
-.nav-items > ul > li{
-    margin: 20px;
-    padding: 10px;
+.nav-items li{
+    cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.25s ease;
     /* border: 1px solid black; */
-    font-size: 24px;
+    font-size: 20px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    list-style-type: none;
 }
+.nav-items li:hover {
+  color: #fc8019;
+}
+
+/* Fancy Login button */
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 22px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #fc8019, #ff5722);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(252, 128, 25, 0.3);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(252, 128, 25, 0.45);
+  background: linear-gradient(135deg, #ff963d, #fc8019);
+}
+
+.login-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.login-icon {
+  display: inline-block;
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.login-btn:hover .login-icon {
+  transform: translate(2px, -2px);
+}
+
+.login-btn:focus-visible {
+  outline: 3px solid #fc8019;
+  outline-offset: 4px;
+}
+
+/* Responsive header */
+@media (max-width: 650px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .nav-items {
+    gap: 12px;
+  }
+
+  .nav-items ul {
+    gap: 12px;
+  }
+
+  .nav-items li {
+    font-size: 12px;
+  }
+
+  .login-btn {
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+}
+
 /* Search bar */
 .search {
     display: flex;
@@ -153,4 +240,75 @@
 
 .filter-btn:active {
     transform: scale(0.97);
+}
+
+/* Shimmer UI Effect */
+
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shimmer-card {
+  width: 220px;
+  padding: 10px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.shimmer-image {
+  height: 180px;
+  width: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.shimmer-line {
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    #eeeeee 25%,
+    #dddddd 50%,
+    #eeeeee 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.shimmer-title {
+  width: 75%;
+  height: 16px;
+}
+
+.shimmer-rating {
+  width: 45%;
+}
+
+.shimmer-cuisine {
+  width: 90%;
+}
+
+.shimmer-location {
+  width: 60%;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
 }
