@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { LOGO } from "../../utils/constant";
 import { useState } from "react";
 
@@ -12,9 +13,15 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact Us</li>
+                    <li>
+                        <Link to={'/'}>Home</Link>
+                    </li>
+                    <li>
+                        <Link to={'/about'}> About</Link>
+                    </li>
+                    <li>
+                        <Link to={'/contact'}>Contact Us</Link>
+                    </li>
                     <li>Cart</li>
                 </ul>
 
