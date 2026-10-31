@@ -26,7 +26,6 @@ const Body = () => {
         } finally {
             setIsLoading(false);
         }
-
         // console.log(json);
     }
     const filterTopRatedRes = () => {
@@ -66,7 +65,6 @@ const Body = () => {
                     </div>
                     )
             }
-
         </div>
     )
 }
