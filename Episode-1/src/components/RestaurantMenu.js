@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import mockMenu from '../../utils/mockMenu.json';
 import Shimmer from './Shimmer';
+import { useParams } from 'react-router';
+
 const RestaurantMenu = () => {
     const [restaurantInfo, setRestaurantInfo] = useState(null);
     const [menuCategories, setMenuCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);4
 
-    console.log("Restaurant Menu Component Rendered");
+    const {resId} = useParams();
+    // console.log(param);
+
+    // console.log("Restaurant Menu Component Rendered");
 
     useEffect(() => {
-        console.log('UseEffect Starts now');
+        // console.log('UseEffect Starts now');
         fetchMenu();
-        console.log('UseEffect ends now');
+        // console.log('UseEffect ends now');
     }, [])
 
     // Using the saved Swiggy response instead of the blocked live AP
     const fetchMenu = async () => {
         try {
-            const response = await fetch(`https://proxy.cors.dev/https://namastedev.com/api/v1/listRestaurantMenu/123456`);
+            const response = await fetch(`https://proxy.cors.dev/https://namastedev.com/api/v1/listRestaurantMenu/${resId}`);
             const json = await response.json();
 
-            console.log(json);
+            // console.log(json);
 
             const restaurantData = json.data.cards[2]?.card?.card?.info;
 
