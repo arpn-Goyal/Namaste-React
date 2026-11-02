@@ -332,6 +332,9 @@
   height: 200px;
   border-radius: 15px;
   background-color: #e5e5e5;
+  object-fit: cover;
+  border-radius: 15px;
+  display: block;
 }
 
 .restaurant-info {

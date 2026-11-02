@@ -15,11 +15,14 @@ const Body = () => {
 
     const fetchData = async () => {
         try {
+            // const fetchedData = await fetch(
+            //     "https://proxy.cors.dev/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.91460&lng=75.85430&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            // );
             const fetchedData = await fetch(
-                "https://proxy.cors.dev/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.91460&lng=75.85430&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+                "https://proxy.cors.dev/https://namastedev.com/api/v1/listRestaurants"
             );
             const json = await fetchedData.json();
-            const restaurants = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            const restaurants = json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
             setFilteredRestaurants(restaurants ?? []);
         } catch (error) {
             console.error("Failed to fetch restaurants:", error);
