@@ -25,10 +25,15 @@ class About extends React.Component {
           using components, hooks and routing.
         </p>
 
-        <UserClass name="Arpan Goyal"
+        <UserClass name="First"
           role="Full Stack Developer"
-          email="arpan@example.com"
+          email="firstChild@example.com"
           location="Punjab, India" />
+
+        {/* <UserClass name="Second"
+          role="Full Stack Developer"
+          email="secondChild@example.com"
+          location="Punjab, India" /> */}
       </div>
     )
   }
