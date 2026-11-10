@@ -1,54 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import mockMenu from '../../utils/mockMenu.json';
 import Shimmer from './Shimmer';
-import { useParams } from 'react-router';
+import useRestaurantmenu from '../../utils/useRestaurantmenu';
+import { useParams } from "react-router";
 
 const RestaurantMenu = () => {
-    const [restaurantInfo, setRestaurantInfo] = useState(null);
-    const [menuCategories, setMenuCategories] = useState([]);
-    const [loading, setLoading] = useState(true);4
+    const { resId } = useParams();
+     console.log("Restaurant ID:", resId);
 
-    const {resId} = useParams();
-    // console.log(param);
-
-    // console.log("Restaurant Menu Component Rendered");
-
-    useEffect(() => {
-        // console.log('UseEffect Starts now');
-        fetchMenu();
-        // console.log('UseEffect ends now');
-    }, [])
-
-    // Using the saved Swiggy response instead of the blocked live AP
-    const fetchMenu = async () => {
-        try {
-            const response = await fetch(`https://proxy.cors.dev/https://namastedev.com/api/v1/listRestaurantMenu/${resId}`);
-            const json = await response.json();
-
-            // console.log(json);
-
-            const restaurantData = json.data.cards[2]?.card?.card?.info;
-
-            // Menu Categories
-            const categories = json?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-
-            // Keep only actual menu categories
-            const filteredCategories = categories?.filter(
-                (category) =>
-                    category?.card?.card?.["@type"]?.includes("ItemCategory")
-            );
-
-
-            setRestaurantInfo(restaurantData);
-            setMenuCategories(filteredCategories || []);
-
-        } catch (error) {
-            console.error("Error fetching restaurants:", error);
-        } finally {
-            setLoading(false);
-        }
-    }
-
+    const { restaurantInfo,
+        menuCategories,
+        loading } = useRestaurantmenu(resId);
     // Wait until restaurant information is available
     if (loading) {
         return <Shimmer />;
