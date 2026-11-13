@@ -27,6 +27,9 @@ const Header = () => {
                     <li>
                         {onlineStatus ? "🟢 Online" : "🔴 Offline"}
                     </li>
+                    <li>
+                        <Link to={'/grocery'}>Grocery</Link>
+                    </li>
                     <li>Cart</li>
                 </ul>
 
