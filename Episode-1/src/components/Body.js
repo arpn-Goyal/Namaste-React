@@ -3,11 +3,18 @@ import restaurants from "../../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+
+    // Use Our custome Hook, to check whether user is online or Offline
+    // Show status accordingly
+
+    const userOnline = useOnlineStatus();
+
     // console.log(useState(restaurants));
 
     useEffect(() => {
@@ -35,6 +42,8 @@ const Body = () => {
     const filterTopRatedRes = () => {
         setFilteredRestaurants(restaurants.filter(r => r.info.avgRating > 4));
     }
+
+    if(!userOnline) return <h2>Oops!! Your are getting error with Internet Connection.</h2>
     return (
         <div className="body">
             <div className="search">

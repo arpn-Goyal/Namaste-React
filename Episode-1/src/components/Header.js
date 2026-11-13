@@ -1,11 +1,13 @@
 import { Link } from "react-router";
 import { LOGO } from "../../utils/constant";
 import { useState } from "react";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 // Header Component
 const Header = () => {
-    const[btnType, setBtnType] = useState('Login');
-
+    const [btnType, setBtnType] = useState('Login');
+    const onlineStatus = useOnlineStatus();
+    
     return (
         <div className="header">
             <div className="logo-container">
@@ -22,11 +24,14 @@ const Header = () => {
                     <li>
                         <Link to={'/contact'}>Contact Us</Link>
                     </li>
+                    <li>
+                        {onlineStatus ? "🟢 Online" : "🔴 Offline"}
+                    </li>
                     <li>Cart</li>
                 </ul>
 
                 <button className="login-btn" onClick={() => {
-                    if(btnType === 'Login' ? setBtnType('Logout') : setBtnType('Login'));
+                    if (btnType === 'Login' ? setBtnType('Logout') : setBtnType('Login'));
                 }}>
                     <span className="login-icon">↗</span>
                     {btnType}
