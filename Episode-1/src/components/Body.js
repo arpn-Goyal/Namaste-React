@@ -1,90 +1,118 @@
 import RestaurantCard from "./RestauarantCard";
-import restaurants from "../../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
+    const [restaurants, setRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
-    // Use Our custome Hook, to check whether user is online or Offline
-    // Show status accordingly
-
     const userOnline = useOnlineStatus();
-
-    // console.log(useState(restaurants));
 
     useEffect(() => {
         fetchData();
-    }, [])
+    }, []);
 
     const fetchData = async () => {
         try {
-            // const fetchedData = await fetch(
-            //     "https://proxy.cors.dev/https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.91460&lng=75.85430&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-            // );
             const fetchedData = await fetch(
                 "https://proxy.cors.dev/https://namastedev.com/api/v1/listRestaurants"
             );
+
             const json = await fetchedData.json();
-            const restaurants = json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            setFilteredRestaurants(restaurants ?? []);
+
+            const restaurantList =
+                json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? [];
+
+            setRestaurants(restaurantList);
+            setFilteredRestaurants(restaurantList);
+
         } catch (error) {
             console.error("Failed to fetch restaurants:", error);
         } finally {
             setIsLoading(false);
         }
-        // console.log(json);
-    }
+    };
+
     const filterTopRatedRes = () => {
-        setFilteredRestaurants(restaurants.filter(r => r.info.avgRating > 4));
+        const filtered = restaurants.filter(
+            (r) => r.info.avgRating > 4
+        );
+
+        setFilteredRestaurants(filtered);
+    };
+
+    const handleSearch = (value) => {
+        setSearchText(value);
+
+        const filtered = restaurants.filter((r) =>
+            r.info.cuisines.some((cuisine) =>
+                cuisine.toLowerCase().includes(value.toLowerCase())
+            )
+        );
+
+        setFilteredRestaurants(filtered);
+    };
+
+    if (!userOnline) {
+        return (
+            <h2 className="text-center text-xl font-semibold text-red-600 mt-10">
+                Oops! You're having an internet connection issue.
+            </h2>
+        );
     }
 
-    if(!userOnline) return <h2>Oops!! Your are getting error with Internet Connection.</h2>
     return (
-        <div className="body">
-            <div className="search">
-                <span className="search-icon">⌕</span>
-                <input
-                    onChange={(e) => {
-                        const value = e.target.value;
-                        setSearchText(value);
+        <div className="w-full">
 
-                        const filtered = restaurants.filter(r =>
-                            r.info.cuisines.some((cuisine) =>
-                                cuisine.toLowerCase().includes(value.toLowerCase())
-                            ));
-                        setFilteredRestaurants(filtered);
-                    }}
+            {/* Search Bar */}
+            <div className="flex items-center gap-3 mx-4 sm:mx-6 md:mx-8 mt-6 px-4 h-[54px] bg-white border border-gray-200 rounded-xl shadow-sm transition-all duration-300 focus-within:border-[#fc8019] focus-within:ring-4 focus-within:ring-orange-100">
+
+                <span className="text-2xl text-gray-500">
+                    ⌕
+                </span>
+
+                <input
                     type="text"
                     value={searchText}
+                    onChange={(e) => handleSearch(e.target.value)}
                     placeholder="Search restaurants..."
+                    className="flex-1 w-full h-full bg-transparent text-base text-gray-800 placeholder:text-gray-400 outline-none"
                 />
             </div>
-            <div className="filter-btn" onClick={() => { filterTopRatedRes() }}>
-                ★ Top Rated Restaurants
-            </div>
-            {
-                isLoading ? (
-                    <Shimmer />
-                ) :
-                    (<div className="res-container">
-                        {
-                            filteredRestaurants.map(restaurant => (
-                                <Link key={restaurant.info.id} to={`/restaurant/${restaurant.info.id}`}>
-                                    <RestaurantCard restObj={restaurant} />
-                                </Link>
-                            )
-                            )
-                        }
-                    </div>
-                    )
-            }
+
+            {/* Filter Button */}
+            <button
+                onClick={filterTopRatedRes}
+                className="flex items-center gap-2 mx-4 sm:mx-6 md:mx-8 mt-4 mb-5 px-5 py-2.5 bg-white text-gray-800 border border-gray-300 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 hover:bg-gray-100 hover:border-gray-800 hover:-translate-y-0.5 hover:shadow-md active:scale-95"
+            >
+                <span className="text-yellow-500 text-lg">★</span>
+                Top Rated Restaurants
+            </button>
+
+            {/* Restaurant Cards */}
+            {isLoading ? (
+                <Shimmer />
+            ) : (
+                <div className="flex flex-wrap items-start gap-6 p-5">
+
+                    {filteredRestaurants.map((restaurant) => (
+                        <Link
+                            key={restaurant.info.id}
+                            to={`/restaurant/${restaurant.info.id}`}
+                            className="text-inherit no-underline"
+                        >
+                            <RestaurantCard restObj={restaurant} />
+                        </Link>
+                    ))}
+
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default Body;
